@@ -1,0 +1,33 @@
+.site-layout .site-layout-background {
+  background: #fff;
+}
+.anticon-star {
+  color: yellow !important;
+}
+.anticon-plus {
+  font-weight: bold !important;
+}
+.ant-card {
+  background-color: #1f1f1f !important;
+}
+.ant-card-meta-title {
+  color: white !important;
+  margin-bottom: 0 !important;
+}
+.ant-card-meta-description {
+  color: white !important;
+}
+.ant-btn {
+  color: white !important;
+  background-color: #434343 !important;
+}
+#components-layout-demo-top-side .logo {
+  width: 120px;
+  height: 31px;
+  background: rgba(255, 255, 255, 0.2);
+  margin: 16px 28px 16px 0;
+  float: left;
+}
+.site-layout-background {
+  background: #fff;
+}
