@@ -13,7 +13,7 @@ export default function CardComponent(props) {
       <Col span={6}>
         <Card
           hoverable
-          style={{ width: 240, marginBottom: 10 }}
+          style={{ width: 240, marginBottom: 10, backgroundColor: '#1f1f1f' }}
           cover={<img alt="example" src={image} />}
         >
           <Meta

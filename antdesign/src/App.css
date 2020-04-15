@@ -7,9 +7,9 @@
 .anticon-plus {
   font-weight: bold !important;
 }
-.ant-card {
+/* .ant-card {
   background-color: #1f1f1f !important;
-}
+} */
 .ant-card-meta-title {
   color: white !important;
   margin-bottom: 0 !important;
@@ -29,5 +29,5 @@
   float: left;
 }
 .site-layout-background {
-  background: #fff;
+  background: #fff !important;
 }
