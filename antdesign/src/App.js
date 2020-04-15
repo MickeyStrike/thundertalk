@@ -1,23 +1,51 @@
 import React from 'react'
 import './App.css'
-import { Layout, Menu, Breadcrumb, Row } from 'antd';
+import { Layout, Menu, Breadcrumb, Row, Skeleton, Card, Avatar, Col } from 'antd';
 import 'antd/dist/antd.css'
-import { UserOutlined, LaptopOutlined, NotificationOutlined } from '@ant-design/icons';
+import { UserOutlined, LaptopOutlined, NotificationOutlined, EditOutlined, EllipsisOutlined, SettingOutlined } from '@ant-design/icons';
 
 import useFetcher from './helpers/useFetcher'
 
-import Card from './components/Card'
+import CardComponent from './components/Card'
 
 const { SubMenu } = Menu;
 const { Header, Content, Footer, Sider } = Layout;
+const { Meta } = Card;
 
 function App() {
 
   const { data, loading, error } = useFetcher()
 
-  if(error) return <p>Error Coy ..</p>
-  
-  console.log(data)
+  const SkeletonCard = () => {
+    let arr = []
+    for (let i = 0; i < 20; i++) {
+      arr = [...arr,
+        <Col key={i} style={{marginBottom: 20}} span={6}>
+          <Card
+            style={{ width: 300, marginTop: 16 }}
+            actions={[
+              <SettingOutlined key="setting" />,
+              <EditOutlined key="edit" />,
+              <EllipsisOutlined key="ellipsis" />,
+            ]}
+          >
+            <Skeleton loading={loading} avatar active>
+              <Meta
+                avatar={
+                  <Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />
+                }
+                title="Card title"
+                description="This is the description"
+              />
+            </Skeleton>
+          </Card>
+        </Col>
+      ]
+    }
+    return arr
+  }
+
+  if(error) return <p>Error Cuy ..</p>
 
   return (
     <>
@@ -80,12 +108,16 @@ function App() {
               <div className="site-layout-background" style={{ padding: 24, minHeight: 360 }}>
                 {
                   loading ? 
-                    <p>loading ...</p> 
+                  <Row>
+                    {
+                      SkeletonCard()
+                    }
+                  </Row>
                   :
                     <Row>
                       {
                         data.map((movie) => {
-                          return <Card title={movie.title} ratings={movie.ratings} image={movie.image} />
+                          return <CardComponent key={movie.id} title={movie.title} ratings={movie.ratings} image={movie.image} />
                         })
                       }
                     </Row>

@@ -9,7 +9,6 @@ export default function useFetcher() {
     setLoading(true)
     axios.get('http://localhost:3000/movies')
     .then(({ data }) => {
-      console.log(data)
       setData(data)
     })
     .catch(err => setError(err))

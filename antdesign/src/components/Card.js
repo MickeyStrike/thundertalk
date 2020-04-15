@@ -16,24 +16,24 @@ export default function CardComponent(props) {
           style={{ width: 240, marginBottom: 10 }}
           cover={<img alt="example" src={image} />}
         >
-          <Meta 
+          <Meta
             title={
             <>
               <Row>
                 <Col>
-                  <StarFilled style={{marginRight: '10px'}} /> 
+                  <StarFilled style={{marginRight: '10px'}} />
                 </Col>
                 <Col>
                   <p>{ratings}</p>
                 </Col>
               </Row>
-            </>} 
+            </>}
             description={
-            <> 
-              <p>{title}</p> 
+            <>
+              <p>{title}</p>
               <Button style={{marginBottom: '2%', width: '99%', textAlign: 'center'}}>
                 <PlusOutlined />Watchlist
-              </Button> 
+              </Button>
             </>} />
         </Card>
       </Col>
